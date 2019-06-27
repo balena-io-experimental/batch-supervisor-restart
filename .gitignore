@@ -1,0 +1,5 @@
+# Task batches
+batch*
+
+# Logs
+*.log
