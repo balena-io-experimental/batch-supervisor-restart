@@ -20,7 +20,13 @@ finish_up() {
 }
 
 main() {
-    systemctl restart resin-supervisor || finish_up "Couldn't restart supervisor."
+    if ! systemctl restart resin-supervisor ; then
+        echo "First restart attempt didn't work, trying with balenaEngine restart"
+        systemctl stop resin-supervisor || finish_up "Couldn't stop supervisor."
+        systemctl stop balena || finish_up "Couldn't stop balena."
+        systemctl start balena || finish_up "Couldn't start up balena."
+        systemctl start resin-supervisor || finish_up "Couldn't start up supervisor."
+    fi
 
     sleep 10
     if ! balena ps | grep -q resin_supervisor ; then
