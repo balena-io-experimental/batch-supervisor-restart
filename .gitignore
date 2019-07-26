@@ -3,3 +3,7 @@ batch*
 
 # Logs
 *.log
+
+# JS
+node_modules
+package-lock.json

@@ -1,0 +1,28 @@
+{
+  "name": "supervisor-restart-tools",
+  "version": "0.0.0",
+  "description": "Tooling for the supervisor restart scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balena-io-playground/batch-supervisor-restart.git"
+  },
+  "keywords": [
+    "balena",
+    "fleetops"
+  ],
+  "author": "Gergely Imreh <gergely@balena.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/balena-io-playground/batch-supervisor-restart/issues"
+  },
+  "homepage": "https://github.com/balena-io-playground/batch-supervisor-restart#readme",
+  "dependencies": {
+    "balena-device-status": "^3.1.2",
+    "balena-sdk": "^12.7.0",
+    "bluebird": "^3.5.5"
+  }
+}
