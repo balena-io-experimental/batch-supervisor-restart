@@ -9,9 +9,9 @@ if (!authToken) {
 }
 
 const balena = new Balena();
-balena.auth.loginWithToken(authToken, function (error) {
-    if (error)
-        throw error;
+balena.auth.loginWithToken(authToken).catch(function (error) {
+    console.error(error);
+    process.exit();
 });
 
 const main = async function(appId, statusKey) {
